@@ -1,0 +1,9 @@
+{
+    "cSpell.words": ["Desaturate", "Grayscale", "lipgloss", "Strikethrough"],
+    "yaml.schemas": {
+        "/home/retzer/Documents/coding/MicroPad/tui/theme/theme.schema.json": [
+            "*.mptheme.yml",
+            "file:///home/retzer/Documents/coding/MicroPad/themes/_example.mptheme.yml"
+        ]
+    }
+}

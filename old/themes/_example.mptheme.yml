@@ -1,0 +1,39 @@
+variables:
+    command_bar_error_padding: 3
+
+root:
+    rules:
+        Background: "{{ .background }}"
+
+colors:
+    text: "#FFFFFF"
+    background: "#000000"
+    primary: "#34EB6B"
+    secondary: "#C23A3A"
+    accent: "#2A52F5"
+    success: "#2Af567"
+    warning: "#F5D32A"
+    error: "#F52A2A"
+
+command_bar_theme:
+    prefix_style:
+        rules:
+            Foreground: "{{ darken .text 0.5 }}"
+    text_style:
+        rules:
+            Foreground: "{{ .text }}"
+    err_current_style:
+        rules:
+            Foreground: "{{ .error }}"
+            PaddingLeft: "{{ .command_bar_error_padding }}"
+    err_old_style:
+        rules:
+            Foreground: "{{ darken .text 0.5 }}"
+            PaddingLeft: "{{ .command_bar_error_padding }}"
+
+plugins:
+    example_plugin_id:
+        example_style:
+            rules:
+                Foreground: "{{ .text }}"
+                Bold: true

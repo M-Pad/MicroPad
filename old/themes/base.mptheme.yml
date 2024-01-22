@@ -1,0 +1,27 @@
+variables:
+    text: "#FFFFFF"
+    background: "#000000"
+
+    error_red: "#f02626"
+
+    command_bar_error_padding: 3
+
+root:
+    rules:
+        Background: "{{ .background }}"
+
+command_bar_theme:
+    prefix_style:
+        rules:
+            Foreground: "{{ darken .text 0.5 }}"
+    text_style:
+        rules:
+            Foreground: "{{ .text }}"
+    err_current_style:
+        rules:
+            Foreground: "{{ .error_red }}"
+            MarginLeft: "{{ .command_bar_error_padding }}"
+    err_old_style:
+        rules:
+            Foreground: "{{ darken .text 0.5 }}"
+            MarginLeft: "{{ .command_bar_error_padding }}"

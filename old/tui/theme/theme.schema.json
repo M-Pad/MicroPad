@@ -1,0 +1,489 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/$defs/Theme",
+    "$defs": {
+        "Variables": {
+            "items": {
+                "type": "string"
+            },
+            "description": "A collection of variables accessible throughout the theme",
+            "type": "object"
+        },
+        "Style": {
+            "properties": {
+                "rules": {
+                    "properties": {
+                        "AlignHorizontal": {
+                            "anyOf": [
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "AlignVersicle": {
+                            "anyOf": [
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "Background": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "Blink": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "Bold": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "BorderBackground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "BorderBottom": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "BorderBottomBackground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "BorderBottomForeground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "BorderForeground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "BorderLeft": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "BorderLeftBackground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "BorderLeftForeground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "BorderRight": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "BorderStyle": {
+                            "type": "string"
+                        },
+                        "BorderTop": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "BorderTopBackground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "BorderTopForeground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "ColorWhitespace": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "Faint": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "Foreground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "Height": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "Inline": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "Italic": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "MarginBackground": {
+                            "type": "string",
+                            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+                        },
+                        "MarginBottom": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "MarginLeft": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "MarginRight": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "MarginTop": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "MaxHeight": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "MaxWidth": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "PaddingBottom": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "PaddingLeft": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "PaddingRight": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "PaddingTop": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "Reverse": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "Strikethrough": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "StrikethroughSpaces": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "TabWidth": {
+                            "anyOf": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "Underline": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        },
+                        "UnderlineSpaces": {
+                            "anyOf": [
+                                {
+                                    "type": "boolean"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "{{ .+ }}"
+                                }
+                            ]
+                        }
+                    },
+                    "description": "A collection of style properties. This contains every method available at: https://pkg.go.dev/github.com/charmbracelet/lipgloss#Style",
+                    "additionalProperties": false,
+                    "type": "object"
+                },
+                "meta": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Additional properties for a style",
+                    "type": "object"
+                }
+            },
+            "description": "The rules and metadata that define a style",
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "Color": {
+            "type": "string",
+            "pattern": "(^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$)|(^\\d{2,3}?$)|(^{{ .+ }}$)"
+        },
+        "Theme": {
+            "properties": {
+                "variables": {
+                    "$ref": "#/$defs/Variables"
+                },
+                "colors": {
+                    "properties": {
+                        "text": {
+                            "$ref": "#/$defs/Color"
+                        },
+                        "background": {
+                            "$ref": "#/$defs/Color"
+                        },
+                        "primary": {
+                            "$ref": "#/$defs/Color"
+                        },
+                        "secondary": {
+                            "$ref": "#/$defs/Color"
+                        },
+                        "accent": {
+                            "$ref": "#/$defs/Color"
+                        },
+                        "success": {
+                            "$ref": "#/$defs/Color"
+                        },
+                        "warning": {
+                            "$ref": "#/$defs/Color"
+                        },
+                        "error": {
+                            "$ref": "#/$defs/Color"
+                        }
+                    },
+                    "required": [
+                        "text",
+                        "background",
+                        "primary",
+                        "secondary",
+                        "accent",
+                        "success",
+                        "warning",
+                        "error"
+                    ],
+                    "description": "Defines the root colors for the theme\nMost styles should use the root styles unless required.",
+                    "type": "object"
+                },
+                "root": {
+                    "description": "Style for the Root (base)",
+                    "$ref": "#/$defs/Style"
+                },
+                "command_bar_theme": {
+                    "properties": {
+                        "prefix_style": {
+                            "$ref": "#/$defs/Style"
+                        },
+                        "text_style": {
+                            "$ref": "#/$defs/Style"
+                        },
+                        "err_current_style": {
+                            "$ref": "#/$defs/Style"
+                        },
+                        "err_old_style": {
+                            "$ref": "#/$defs/Style"
+                        }
+                    },
+                    "description": "Styles for the Command Bar",
+                    "type": "object"
+                },
+                "plugins": {
+                    "additionalProperties": {
+                        "patternProperties": {
+                            ".*": {
+                                "$ref": "#/$defs/Style",
+                                "description": "Style for a plugin provided feature"
+                            }
+                        },
+                        "description": "The id of the targeted plugin",
+                        "additionalProperties": false
+                    },
+                    "description": "Styles for plugins.\nNote: only common plugins will have intellisense",
+                    "type": "object"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        }
+    }
+}
