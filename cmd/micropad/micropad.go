@@ -1,4 +1,4 @@
-package micropad
+package main
 
 import "fmt"
 
