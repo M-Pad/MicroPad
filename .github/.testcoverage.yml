@@ -1,0 +1,4 @@
+profile: cover.out
+local-prefix: github.com/M-Pad/MicroPad
+threshold:
+  total: 90
