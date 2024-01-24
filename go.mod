@@ -1,4 +1,4 @@
-module github.com/pyscripter99/MicroPad
+module github.com/M-Pad/MicroPad
 
 go 1.21.5
 
